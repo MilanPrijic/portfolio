@@ -42,7 +42,7 @@ const ProjectFilter = ({ filters }) => {
           </div>
         </SelectTrigger>
 
-        <SelectContent className="min-w-[var(--radix-select-trigger-width)] bg-primary capitalize">
+        <SelectContent className="min-w-[var(--radix-select-trigger-width)] max-h-[500px] bg-primary capitalize">
           {filters.map((item) => (
             <SelectGroup>
               {item.name === "web" ||
