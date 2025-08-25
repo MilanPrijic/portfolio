@@ -41,19 +41,21 @@ const About = () => {
 
       <motion.p
         varients={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+        className="mt-2 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        I am a skilled software engineer with a passion for creating innovative
-        solutions. My expertise lies in full-stack development, where I leverage
-        my knowledge of both front-end and back-end technologies to build robust
-        applications. I thrive in collaborative environments and enjoy tackling
-        complex challenges that require creative problem-solving. With a strong
-        foundation in computer science and a commitment to continuous learning,
-        I am dedicated to delivering high-quality software that meets user needs
-        and exceeds expectations.
+        I am a skilled software engineer with expertise in iOS, macOS, and
+        full-stack development, leveraging both front-end and back-end
+        technologies to deliver robust solutions. I bring experience in leading
+        teams as well as collaborating under the direction of others, adapting
+        effectively to both roles. With a strong passion for gaming and hands-on
+        experience developing single-player and multiplayer projects in Unreal
+        Engine 5, I combine creativity with technical expertise. Grounded in
+        computer science and committed to continuous learning, I am dedicated to
+        building high-quality software that meets user needs and exceeds
+        expectations.
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-10">
+      <div className="mt-10 flex flex-wrap gap-10">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}

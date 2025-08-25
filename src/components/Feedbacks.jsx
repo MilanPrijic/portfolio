@@ -11,7 +11,9 @@ const FeedbackCard = ({
   company,
   image,
   testimonial,
+  linkedIn,
 }) => {
+  console.log("URL: " + linkedIn);
   return (
     <motion.div
       key={name}
@@ -21,7 +23,10 @@ const FeedbackCard = ({
       <p className="text-white font-black text-[48px]">"</p>
       <div className="mt-1">
         <p className="text-white tracking-wider text-[18px]">{testimonial}</p>
-        <div className="mt-7 flex justify-between items-center gap-1">
+        <div
+          className="mt-7 flex justify-between items-center gap-1 hover:cursor-pointer"
+          onClick={() => (window.location.href = linkedIn)}
+        >
           <div className="flex-1 flex flex-col">
             <p className="text-white font-medium text-[16px]">{name}</p>
             <p className="mt-1 text-secondary text-[12px]">
@@ -60,4 +65,4 @@ const Feedbacks = () => {
   );
 };
 
-export default SectionWrapper(Feedbacks, "");
+export default SectionWrapper(Feedbacks, "testimonials");

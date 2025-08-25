@@ -1,11 +1,15 @@
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
-import { github } from "../assets";
+import { AppStoreLogo, github } from "../assets";
 import { SectionWrapper } from "../hoc";
-import { projects } from "../constants";
+import { projects, technologies } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import ProjectFilter from "./filters/ProjectFilter.jsx";
+import DropdownProjectFilter from "@/components/filters/DropdownProjectFilter.jsx";
+import { Button } from "@/components/ui/button.js";
+import { useSearchParams } from "react-router-dom";
 
 const ProjectCard = ({
   index,
@@ -16,10 +20,14 @@ const ProjectCard = ({
   source_code_link,
 }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div
+      initial="hidden"
+      animate="show"
+      variants={fadeIn("up", "spring", index * 0.2, 0.5)}
+    >
       <Tilt
         options={{ max: 45, scale: 1, speed: 450 }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+        className="bg-tertiary p-5 rounded-2xl ms:w-[360px] w-full"
       >
         <div className="relative w-full h-[230px]">
           <img
@@ -32,11 +40,19 @@ const ProjectCard = ({
               onClick={() => window.open(source_code_link, "_blank")}
               className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
             >
-              <img
-                src={github}
-                alt="github"
-                className="w-1/2 h-1/2 object-contain"
-              />
+              {source_code_link.includes("apps.apple.com") ? (
+                <img
+                  src={AppStoreLogo}
+                  alt="appstore"
+                  className={"absolute w-1/4 h-1/4 object-contain rounded-full"}
+                />
+              ) : (
+                <img
+                  src={github}
+                  alt="github"
+                  className={"w-1/2 h-1/2 object-contain"}
+                />
+              )}
             </div>
           </div>
         </div>
@@ -59,6 +75,45 @@ const ProjectCard = ({
 };
 
 const Works = () => {
+  const [searchParams] = useSearchParams();
+  const selectedFilter = searchParams.get("filter");
+
+  const [showMore, setShowMore] = useState(false);
+  const [projectsToShow, setProjectsToShow] = useState(projects.slice(0, 3));
+
+  useEffect(() => {
+    let filteredProjects = projects;
+
+    if (selectedFilter && selectedFilter.toLowerCase() !== "all") {
+      // Find the tag object for the selected filter
+      const selectedTechnology = technologies.find(
+        (technology) =>
+          technology.name.toLowerCase() === selectedFilter.toLowerCase(),
+      );
+
+      // Build a set of valid values to match
+      const validValues = selectedTechnology
+        ? [
+            selectedTechnology.name.toLowerCase(),
+            ...selectedTechnology.correspondingValues.map((v) =>
+              v.toLowerCase(),
+            ),
+          ]
+        : [];
+
+      // Filter projects
+      filteredProjects = projects.filter((project) =>
+        project.tags.some((tag) =>
+          validValues.includes(tag.name.toLowerCase()),
+        ),
+      );
+    }
+
+    setProjectsToShow(
+      showMore ? filteredProjects : filteredProjects.slice(0, 3),
+    );
+  }, [showMore, selectedFilter]);
+
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -79,13 +134,26 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className="mt-20 flex flex-wrap gap-7">
-        {projects.map((project, index) => (
+      <ProjectFilter filters={technologies} />
+
+      <DropdownProjectFilter filters={technologies} />
+
+      <div className="mt-10 flex flex-wrap gap-7">
+        {projectsToShow.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
+      </div>
+
+      <div className="mt-20 flex w-full items-center justify-center">
+        <Button
+          className="px-6 py-3 bg-tertiary font-light text-sm rounded-2xl leading-none"
+          onClick={() => setShowMore(!showMore)}
+        >
+          {showMore ? "Show Less" : "Show More"}
+        </Button>
       </div>
     </>
   );
 };
 
-export default SectionWrapper(Works, "");
+export default SectionWrapper(Works, "projects");
