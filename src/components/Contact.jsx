@@ -5,6 +5,8 @@ import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+import { toast } from "sonner";
+import { isValidEmail } from "@/utils/validations.js";
 
 const Contact = () => {
   const formRef = useRef();
@@ -26,6 +28,18 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (
+      form.name === "" ||
+      !isValidEmail(form.email) ||
+      form.message.length < 20
+    ) {
+      toast.error(
+        "Please fill in all fields and ensure your email is valid and message is at least 20 characters long.",
+      );
+      return;
+    }
+
     setLoading(true);
 
     emailjs
@@ -44,7 +58,9 @@ const Contact = () => {
       .then(
         (result) => {
           setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
+          toast.success(
+            "Thank you. I will get back to you as soon as possible.",
+          );
           setForm({
             name: "",
             email: "",
@@ -54,7 +70,7 @@ const Contact = () => {
         (error) => {
           setLoading(false);
           console.error(error);
-          alert("Something went wrong. Please try again later.");
+          toast.error("Something went wrong. Please try again later.");
         },
       );
   };

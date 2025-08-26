@@ -9,6 +9,7 @@ import {
   Works,
   StarsCanvas,
 } from "./components";
+import { Toaster } from "@/components/ui/sonner";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
           <StarsCanvas />
         </div>
       </div>
+      <Toaster closeButton richColors position="bottom-right" />
     </BrowserRouter>
   );
 };
