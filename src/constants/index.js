@@ -18,6 +18,7 @@ import {
   htecLogo,
   MilosAntonijevicPhoto,
   ProfileImagePlaceholder,
+  BrankoIlicPhoto,
 } from "../assets";
 
 export const navLinks = [
@@ -158,6 +159,15 @@ const testimonials = [
     company: "Digital Share d.o.o.",
     image: ProfileImagePlaceholder,
     linkedIn: "https://www.linkedin.com/in/dusan-savic-658ab263/",
+  },
+  {
+    testimonial:
+      "I've had the pleasure of working with Milan on several projects over the years, and he’s consistently delivered high-quality frontend and mobile solutions. His technical skills, attention to detail, and strong sense for user experience make him a standout developer. ",
+    name: "Branko Ilic",
+    designation: "Director of Back End Engineering",
+    company: "Digital Share d.o.o.",
+    image: BrankoIlicPhoto,
+    linkedIn: "https://www.linkedin.com/in/branko-ilic-01a87b112/",
   },
 ];
 

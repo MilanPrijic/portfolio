@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/CV_eng.pdf";
+    link.href = "/MilanPrijic_CV.pdf";
     link.download = "MilanPrijic_CV.pdf";
     document.body.appendChild(link);
     link.click();
@@ -36,7 +36,7 @@ const Navbar = () => {
             <span className="sm:block hidden">Prijic</span>
           </p>
         </Link>
-        <ul className="list-none hidden sm:flex flex-row gap-10">
+        <ul className="list-none hidden lg:flex flex-row gap-10">
           {navLinks.map((link) => (
             <li
               key={link.id}
@@ -49,11 +49,11 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <button onClick={handleDownload} className="your-button-class">
+        <button className="hidden lg:flex" onClick={handleDownload}>
           Download CV
         </button>
         {/* Mobile Navigation Menu */}
-        <div className="sm:hidden flex flex-1 justify-end items-center">
+        <div className="lg:hidden flex flex-1 justify-end items-center">
           <img
             src={toggle ? close : menu}
             alt="menu"
@@ -80,6 +80,14 @@ const Navbar = () => {
                   <a href={`#${link.id}`}>{link.title}</a>
                 </li>
               ))}
+              <li>
+                <button
+                  className="text-secondary font-poppins font-medium cursor-pointer text-[16px]"
+                  onClick={handleDownload}
+                >
+                  Download CV
+                </button>
+              </li>
             </ul>
           </div>
         </div>
