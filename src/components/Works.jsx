@@ -18,6 +18,7 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
+  deployed_link,
 }) => {
   return (
     <motion.div
@@ -58,7 +59,17 @@ const ProjectCard = ({
         </div>
 
         <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
+          <div className="flex flex-row justify-between items-center">
+            <h3 className="text-white font-bold text-[24px]">{name}</h3>
+            {deployed_link && (
+              <Button
+                className="underline px-1 py-3 bg-tertiary font-medium text-sm rounded-2xl leading-none"
+                onClick={() => window.open(deployed_link, "_blank")}
+              >
+                Visit Site
+              </Button>
+            )}
+          </div>
           <p className="mt-2 text-secondary text-[14px]">{description}</p>
         </div>
 

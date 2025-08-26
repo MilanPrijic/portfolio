@@ -22,6 +22,10 @@ import mockinterview from "./projectImages/MockInterview.png";
 import restaurant from "./projectImages/restaurant.png";
 import gpt3 from "./projectImages/gpt3.png";
 
+import learnupon from "./projectImages/LearnUpon.png";
+import moneysoft from "./projectImages/moneysoft.jpg";
+import myfortress from "./projectImages/myfortress.jpeg";
+
 import JudgmentDay from "./projectImages/JudgmentDay.jpg";
 import Muhrir from "./projectImages/Muhrir.jpg";
 import ToonTanks from "./projectImages/ToonTanks.jpg";
@@ -53,6 +57,9 @@ export {
   mockinterview,
   restaurant,
   gpt3,
+  learnupon,
+  moneysoft,
+  myfortress,
   JudgmentDay,
   Muhrir,
   ToonTanks,

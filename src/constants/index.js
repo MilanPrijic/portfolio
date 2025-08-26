@@ -19,6 +19,9 @@ import {
   MilosAntonijevicPhoto,
   ProfileImagePlaceholder,
   BrankoIlicPhoto,
+  moneysoft,
+  myfortress,
+  learnupon,
 } from "../assets";
 
 export const navLinks = [
@@ -345,6 +348,7 @@ const projects = [
     ],
     image: devflow,
     source_code_link: "https://github.com/MilanPrijic/devflow",
+    deployed_link: "https://devflow-snowy.vercel.app/",
   },
   {
     name: "Ryde",
@@ -422,7 +426,7 @@ const projects = [
         color: "green-text-gradient",
       },
     ],
-    image: AppleLogoBanner,
+    image: learnupon,
     source_code_link:
       "https://apps.apple.com/us/app/learnupon/id947445473?platform=iphone",
   },
@@ -448,7 +452,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: AppleLogoBanner,
+    image: moneysoft,
     source_code_link:
       "https://apps.apple.com/au/app/moneysoft/id999070736?platform=iphone",
   },
@@ -470,7 +474,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: AppleLogoBanner,
+    image: myfortress,
     source_code_link: "https://apps.apple.com/au/app/my-fortress/id1539595386",
   },
   {
@@ -518,6 +522,7 @@ const projects = [
     ],
     image: promptopia,
     source_code_link: "https://github.com/MilanPrijic/promptopia",
+    deployed_link: "https://promptopia-pi-six.vercel.app/",
   },
   {
     name: "Mock Interview",
@@ -555,6 +560,7 @@ const projects = [
     ],
     image: mockinterview,
     source_code_link: "https://github.com/MilanPrijic/MockInterview/tree/main",
+    deployed_link: "https://mock-interview-e5lj.vercel.app/",
   },
   {
     name: "Restaurant",
