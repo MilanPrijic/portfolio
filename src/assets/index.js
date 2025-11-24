@@ -35,6 +35,8 @@ import AppleLogoBanner from "./projectImages/apple-logo-banner.png";
 import ProfileImagePlaceholder from "./profileImages/profile_placeholder.jpg";
 import MilosAntonijevicPhoto from "./profileImages/MilosAntonijevic.jpeg";
 import BrankoIlicPhoto from "./profileImages/BrankoIlic.jpeg";
+import AcoLatkoskiPhoto from "./profileImages/AcoLatkoski.jpg";
+import BrankoPasicPhoto from "./profileImages/BrankoPasic.jpg";
 
 export {
   logo,
@@ -67,4 +69,6 @@ export {
   ProfileImagePlaceholder,
   MilosAntonijevicPhoto,
   BrankoIlicPhoto,
+  AcoLatkoskiPhoto,
+  BrankoPasicPhoto,
 };

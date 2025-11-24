@@ -19,6 +19,8 @@ import {
   MilosAntonijevicPhoto,
   ProfileImagePlaceholder,
   BrankoIlicPhoto,
+  AcoLatkoskiPhoto,
+  BrankoPasicPhoto,
   moneysoft,
   myfortress,
   learnupon,
@@ -168,9 +170,29 @@ const testimonials = [
       "I've had the pleasure of working with Milan on several projects over the years, and he’s consistently delivered high-quality frontend and mobile solutions. His technical skills, attention to detail, and strong sense for user experience make him a standout developer. ",
     name: "Branko Ilic",
     designation: "Director of Back End Engineering",
-    company: "Digital Share d.o.o.",
+    company: "HomeStory",
     image: BrankoIlicPhoto,
     linkedIn: "https://www.linkedin.com/in/branko-ilic-01a87b112/",
+  },
+  {
+    testimonial:
+      "I was working with Milan on a project where he contributed as a macOS and iOS developer. From the very beginning, he demonstrated a proactive approach and a strong sense of ownership over his work. Milan consistently went beyond the original scope, always striving to deliver more value than expected.",
+    name: "Aco Latkoski",
+    designation: "Senior Engineering and Delivery Manager",
+    company: "HTEC",
+    image: AcoLatkoskiPhoto,
+    linkedIn: "https://www.linkedin.com/in/acolatkoski/",
+  },
+  {
+    testimonial:
+      "From the very beginning, his strong iOS technical expertise played a pivotal role in helping us secure a major client project. " +
+      "\n" +
+      "Beyond his technical skills, Milan is a great team player with an engaging personality and natural leadership qualities. He fosters collaboration, supports his colleagues, and brings positive energy to every project he’s involved in. ",
+    name: "Branko Pasic",
+    designation: "Division Director",
+    company: "HTEC",
+    image: BrankoPasicPhoto,
+    linkedIn: "https://www.linkedin.com/in/branko-pasic/",
   },
 ];
 
