@@ -24,7 +24,7 @@ const FeedbackCard = ({
       <div className="mt-1">
         <p className="text-white tracking-wider text-[18px]">{testimonial}</p>
         <div
-          className="mt-7 flex justify-between items-center gap-1 hover:cursor-pointer"
+          className="mt-7 flex justify-between items-center gap-1 hover:cursor-pointer relative group"
           onClick={() => (window.location.href = linkedIn)}
         >
           <div className="flex-1 flex flex-col">
@@ -38,6 +38,11 @@ const FeedbackCard = ({
             alt={`feedback_by-${name}`}
             className="w-10 h-10 rounded-full object-cover"
           />
+
+          {/* tooltip element */}
+          <div className="pointer-events-none absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-black italic text-white text-xs rounded px-2 py-1 whitespace-nowrap z-10">
+            View LinkedIn Profile
+          </div>
         </div>
       </div>
     </motion.div>

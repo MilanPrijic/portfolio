@@ -131,7 +131,7 @@ const experiences = [
     ],
   },
   {
-    title: "iOS Developer",
+    title: "iOS/MacOS/React Developer",
     company_name: "HTEC",
     icon: htecLogo,
     iconBg: "#E6DEDD",
